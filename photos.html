@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBA | Photos</title>
+    <link rel="stylesheet" href="photos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="photos-app">
+
+    <aside class="photo-sidebar">
+        <a href="dashboard.html" class="photo-brand">
+            <div class="brand-symbol">S</div>
+            <div>
+                <strong>SOBA</strong>
+                <small>LIVE • LEARN • GROW</small>
+            </div>
+        </a>
+
+        <span class="menu-label">YOUR SPACE</span>
+
+        <nav class="photo-nav">
+            <a href="dashboard.html"><i class="fa-solid fa-house"></i> Home</a>
+            <a href="dashboard.html"><i class="fa-solid fa-compass"></i> Explore</a>
+            <a href="messages.html"><i class="fa-regular fa-comments"></i> Messages</a>
+            <a href="photos.html" class="active"><i class="fa-regular fa-image"></i> Photos</a>
+            <a href="dashboard.html"><i class="fa-solid fa-users"></i> Community</a>
+            <a href="dashboard.html"><i class="fa-regular fa-calendar"></i> Activities</a>
+        </nav>
+
+        <div class="sidebar-creative">
+            <div class="creative-icon"><i class="fa-solid fa-camera-retro"></i></div>
+            <h3>Every picture has a story.</h3>
+            <p>Share the moments, creativity and experiences that inspire others.</p>
+        </div>
+
+        <div class="photo-sidebar-bottom">
+            <div class="sidebar-user">
+                <div class="user-avatar">S</div>
+                <div>
+                    <strong id="sidebarUser">SOBA Member</strong>
+                    <small>Community member</small>
+                </div>
+            </div>
+            <button id="logoutBtn"><i class="fa-solid fa-arrow-right-from-bracket"></i></button>
+        </div>
+    </aside>
+
+    <main class="photos-main">
+
+        <header class="photos-topbar">
+            <div>
+                <span class="eyebrow">VISUAL COMMUNITY SPACE</span>
+                <h1>See the world through <span>SOBA.</span></h1>
+                <p>Discover creativity, experiences and stories from our community.</p>
+            </div>
+
+            <div class="top-actions">
+                <button class="top-icon" id="searchToggle" title="Search photos">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button class="upload-main-btn" id="openUpload">
+                    <i class="fa-solid fa-plus"></i> Share a photo
+                </button>
+            </div>
+        </header>
+
+        <div class="photo-search" id="photoSearch">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="searchInput" type="text" placeholder="Search photos, creators or topics...">
+        </div>
+
+        <section class="photo-intro">
+            <div class="intro-content">
+                <span>SOBA COMMUNITY COLLECTION</span>
+                <h2>Moments worth<br>sharing.</h2>
+                <p>Creativity connects people. Discover the different ways our community learns, creates and grows.</p>
+                <button id="explorePhotos">Explore collection <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="intro-art">
+                <div class="art-frame frame-back"></div>
+                <div class="art-frame frame-front">
+                    <img src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=800" alt="Beautiful landscape">
+                </div>
+                <div class="art-sticker"><i class="fa-solid fa-camera"></i> STORIES IN EVERY FRAME</div>
+            </div>
+        </section>
+
+        <section class="category-section">
+            <div class="section-heading">
+                <div>
+                    <span class="eyebrow">DISCOVER BY INTEREST</span>
+                    <h2>Explore collections</h2>
+                </div>
+            </div>
+
+            <div class="category-list" id="categoryList">
+                <button class="category-chip active" data-category="all">All photos</button>
+                <button class="category-chip" data-category="nature"><i class="fa-solid fa-leaf"></i> Nature</button>
+                <button class="category-chip" data-category="creativity"><i class="fa-solid fa-palette"></i> Creativity</button>
+                <button class="category-chip" data-category="community"><i class="fa-solid fa-people-group"></i> Community</button>
+                <button class="category-chip" data-category="learning"><i class="fa-solid fa-book-open"></i> Learning</button>
+                <button class="category-chip" data-category="lifestyle"><i class="fa-solid fa-camera"></i> Everyday life</button>
+            </div>
+        </section>
+
+        <section class="gallery-section" id="gallerySection">
+            <div class="gallery-heading">
+                <div>
+                    <span class="eyebrow">THE COMMUNITY LENS</span>
+                    <h2>Visual stories</h2>
+                </div>
+                <select id="sortPhotos">
+                    <option value="recent">Recently shared</option>
+                    <option value="popular">Most appreciated</option>
+                </select>
+            </div>
+
+            <div class="photo-grid" id="photoGrid"></div>
+
+            <div class="empty-gallery" id="emptyGallery" hidden>
+                <i class="fa-regular fa-images"></i>
+                <h3>No photos found</h3>
+                <p>Try another category or search term.</p>
+            </div>
+        </section>
+
+        <footer class="photos-footer">
+            <div class="footer-mark">S</div>
+            <p>SOBA — Every moment can inspire a positive story.</p>
+        </footer>
+    </main>
+</div>
+
+<!-- UPLOAD MODAL -->
+<div class="modal-overlay" id="uploadModal">
+    <div class="upload-modal">
+        <button class="modal-close" id="closeUpload"><i class="fa-solid fa-xmark"></i></button>
+
+        <span class="eyebrow">SHARE YOUR PERSPECTIVE</span>
+        <h2>Give your moment a place.</h2>
+        <p class="modal-description">Share a photo that inspires learning, creativity or community.</p>
+
+        <form id="photoForm">
+            <label class="upload-dropzone" for="photoFile">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+                <strong>Choose a photo</strong>
+                <span>JPG, PNG or WEBP · Maximum 5 MB</span>
+                <img id="imagePreview" alt="Selected photo preview" hidden>
+            </label>
+
+            <input type="file" id="photoFile" accept="image/jpeg,image/png,image/webp" required>
+
+            <label class="field-label" for="photoTitle">Photo title</label>
+            <input class="form-input" type="text" id="photoTitle" maxlength="80" placeholder="Give your photo a title..." required>
+
+            <label class="field-label" for="photoCategory">Collection</label>
+            <select class="form-input" id="photoCategory" required>
+                <option value="">Choose a collection</option>
+                <option value="nature">Nature</option>
+                <option value="creativity">Creativity</option>
+                <option value="community">Community</option>
+                <option value="learning">Learning</option>
+                <option value="lifestyle">Everyday life</option>
+            </select>
+
+            <label class="field-label" for="photoDescription">Your story</label>
+            <textarea class="form-input" id="photoDescription" rows="3" maxlength="250" placeholder="What makes this moment meaningful?"></textarea>
+
+            <label class="consent-check">
+                <input type="checkbox" id="photoConsent" required>
+                <span>I have permission to share this photo and respect the privacy of anyone shown.</span>
+            </label>
+
+            <button class="publish-photo-btn" type="submit">
+                <i class="fa-solid fa-paper-plane"></i> Publish photo
+            </button>
+        </form>
+    </div>
+</div>
+
+<!-- PHOTO VIEWER -->
+<div class="viewer-overlay" id="photoViewer">
+    <button class="viewer-close" id="closeViewer"><i class="fa-solid fa-xmark"></i></button>
+    <button class="viewer-arrow viewer-prev" id="prevPhoto"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="viewer-content" id="viewerContent"></div>
+    <button class="viewer-arrow viewer-next" id="nextPhoto"><i class="fa-solid fa-chevron-right"></i></button>
+</div>
+
+<div class="photo-toast" id="photoToast"></div>
+
+<script src="photos.js"></script>
+</body>
+</html>

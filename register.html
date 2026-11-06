@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBA | Create Account</title>
+
+    <link rel="stylesheet" href="register.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="demo-banner">
+        SOBA DEMO PROTOTYPE
+    </div>
+
+    <header class="topbar">
+        <a href="index.html" class="logo">SOBA<span>.</span></a>
+
+        <a href="index.html" class="back-home">
+            <i class="fas fa-arrow-left"></i> Back to website
+        </a>
+    </header>
+
+    <main class="register-container">
+
+        <section class="register-visual">
+            <div class="visual-overlay"></div>
+
+            <div class="visual-content">
+                <span class="visual-tag">BECOME PART OF SOBA</span>
+
+                <h1>Your Future Starts With A Positive Decision.</h1>
+
+                <p>
+                    Join a community that encourages learning,
+                    personal development, guidance and positive change.
+                </p>
+
+                <div class="visual-features">
+                    <div><i class="fas fa-check-circle"></i> Learn new skills</div>
+                    <div><i class="fas fa-check-circle"></i> Connect with communities</div>
+                    <div><i class="fas fa-check-circle"></i> Discover opportunities</div>
+                    <div><i class="fas fa-check-circle"></i> Grow together</div>
+                </div>
+
+                <div class="visual-footer">
+                    Empowering people. Building communities.
+                </div>
+            </div>
+        </section>
+
+        <section class="register-panel">
+
+            <div class="register-box">
+
+                <div class="mobile-logo">SOBA<span>.</span></div>
+
+                <div class="register-heading">
+                    <span class="eyebrow">CREATE YOUR ACCOUNT</span>
+                    <h2>Join SOBA Today</h2>
+                    <p>Complete the information below to create your account.</p>
+                </div>
+
+                <div class="alert-message" id="alertMessage"></div>
+
+                <form id="registerForm">
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label>First Name</label>
+                            <div class="input-wrapper">
+                                <i class="far fa-user"></i>
+                                <input type="text" id="firstName" placeholder="First name" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Last Name</label>
+                            <div class="input-wrapper">
+                                <i class="far fa-user"></i>
+                                <input type="text" id="lastName" placeholder="Last name" required>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="far fa-envelope"></i>
+                            <input type="email" id="email" placeholder="example@email.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" placeholder="+250 7XX XXX XXX" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-venus-mars"></i>
+                                <select id="gender" required>
+                                    <option value="">Select gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Prefer not to say">Prefer not to say</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Account Type</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-users"></i>
+                                <select id="role" required>
+                                    <option value="">Select role</option>
+                                    <option value="Youth">Youth</option>
+                                    <option value="Community Member">Community Member</option>
+                                    <option value="Partner">Partner</option>
+                                </select>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="Create password" minlength="8" required>
+                            <button type="button" class="toggle-password" data-target="password">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                        <small>Use at least 8 characters.</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" placeholder="Confirm password" required>
+                            <button type="button" class="toggle-password" data-target="confirmPassword">
+                                <i class="far fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <label class="terms">
+                        <input type="checkbox" id="acceptTerms" required>
+                        <span>
+                            I agree to the demo terms and conditions.
+                        </span>
+                    </label>
+
+                    <button type="submit" class="submit-btn">
+                        Create My Account
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+                <div class="login-redirect">
+                    Already have an account?
+                    <a href="login.html">Sign In</a>
+                </div>
+
+                <div class="register-note">
+                    This is a demonstration registration system.
+                    It does not create a real online account.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="register-footer">
+        © 2026 SOBA Demo Prototype. All rights reserved.
+    </footer>
+
+    <script src="register.js"></script>
+
+</body>
+</html>

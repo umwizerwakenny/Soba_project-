@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBA | Account Access</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<div class="demo-label">SOBA DEMO PROTOTYPE</div>
+
+<header class="topbar">
+    <a href="index.html" class="logo">SOBA<span>.</span></a>
+
+    <a href="index.html" class="back-home">
+        <i class="fas fa-arrow-left"></i> Back to website
+    </a>
+</header>
+
+<main class="auth-container">
+
+    <!-- LEFT VISUAL SECTION -->
+    <section class="auth-visual">
+
+        <div class="visual-overlay"></div>
+
+        <div class="visual-content">
+
+            <span class="visual-tag">WELCOME TO SOBA</span>
+
+            <h1>Every Great Journey Begins With A Positive Step.</h1>
+
+            <p>
+                Connect, learn, grow and become part of a community
+                that believes in positive change.
+            </p>
+
+            <div class="visual-features">
+                <div>
+                    <i class="fas fa-check-circle"></i>
+                    Personal Development
+                </div>
+
+                <div>
+                    <i class="fas fa-check-circle"></i>
+                    Educational Opportunities
+                </div>
+
+                <div>
+                    <i class="fas fa-check-circle"></i>
+                    Community Connection
+                </div>
+            </div>
+
+            <div class="visual-footer">
+                Empowering people. Building communities.
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- RIGHT LOGIN SECTION -->
+    <section class="auth-panel">
+
+        <div class="auth-box">
+
+            <div class="mobile-logo">SOBA<span>.</span></div>
+
+            <div class="auth-heading">
+
+                <span class="eyebrow">YOUR JOURNEY STARTS HERE</span>
+
+                <h2>Welcome Back!</h2>
+
+                <p>
+                    Please enter your details to access your account.
+                </p>
+
+            </div>
+
+
+            <!-- NAVIGATION TABS -->
+            <div class="auth-tabs">
+
+                <a href="login.html" class="tab active">
+                    Sign In
+                </a>
+
+                <a href="register.html" class="tab">
+                    Create Account
+                </a>
+
+            </div>
+
+
+            <!-- ALERT MESSAGE -->
+            <div class="alert-message" id="alertMessage"></div>
+
+
+            <!-- LOGIN FORM -->
+            <form id="loginForm">
+
+                <div class="form-group">
+
+                    <label for="loginEmail">Email Address</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="far fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="loginEmail"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="loginPassword">Password</label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fas fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="loginPassword"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="toggle-password"
+                            data-target="loginPassword"
+                            aria-label="Show password"
+                        >
+                            <i class="far fa-eye"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-options">
+
+                    <label class="remember">
+
+                        <input type="checkbox" id="rememberMe">
+
+                        Remember me
+
+                    </label>
+
+                    <button
+                        type="button"
+                        class="forgot-btn"
+                        id="forgotBtn"
+                    >
+                        Forgot password?
+                    </button>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+
+                    Sign In
+
+                    <i class="fas fa-arrow-right"></i>
+
+                </button>
+
+            </form>
+
+
+            <div class="auth-divider">
+                <span>OR</span>
+            </div>
+
+
+            <p class="auth-bottom">
+
+                By continuing, you acknowledge that SOBA is currently
+                presented as a demonstration prototype.
+
+            </p>
+
+
+            <div class="auth-home">
+
+                <a href="index.html">
+                    ← Return to SOBA homepage
+                </a>
+
+            </div>
+
+
+            <div class="auth-register-note">
+
+                Don't have an account?
+
+                <a href="register.html">
+                    Create Account
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="auth-footer">
+
+    © 2026 SOBA Demo Prototype. All rights reserved.
+
+</footer>
+
+
+<script src="login.js"></script>
+
+</body>
+</html>

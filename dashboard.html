@@ -1,0 +1,499 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SOBA | Community</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+    <!-- TOP NAVIGATION -->
+    <header class="topbar">
+
+        <div class="brand">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <a href="dashboard.html" class="brand-name">
+                SOBA<span>.</span>
+            </a>
+        </div>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="searchInput" placeholder="Search community...">
+        </div>
+
+        <div class="top-actions">
+
+            <button class="top-icon" id="notificationBtn" aria-label="Notifications">
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification-dot"></span>
+            </button>
+
+            <div class="profile-wrapper">
+
+                <button class="profile-button" id="profileButton">
+                    <span class="small-avatar" id="topAvatar">S</span>
+                    <span id="topUserName">User</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="profile-menu" id="profileMenu">
+                    <a href="Myprofile.html">
+                        <i class="fa-regular fa-user"></i>
+                        My profile
+                    </a>
+
+                    <button id="logoutBtn">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Log out
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <div class="page-layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-user">
+                <span class="large-avatar" id="sidebarAvatar">S</span>
+
+                <div>
+                    <strong id="sidebarUserName">SOBA Member</strong>
+                    <small id="sidebarUserRole">Community member</small>
+                </div>
+            </div>
+
+            <p class="menu-label">MAIN MENU</p>
+
+            <nav class="side-menu">
+
+                <button class="menu-item active" data-filter="all">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home Feed</span>
+                </button>
+
+                <button class="menu-item" id="exploreMenuButton">
+                    <i class="fa-regular fa-compass"></i>
+                    <span>Explore</span>
+                </button>
+
+                <a class="menu-item" href="videos.html">
+                    <i class="fa-solid fa-video"></i>
+                    <span>Videos</span>
+                </a>
+
+                <button class="menu-item" data-filter="audio">
+                    <i class="fa-solid fa-headphones"></i>
+                    <span>Audio & Podcasts</span>
+                </button>
+
+                <a class="menu-item" href="photos.html">
+                    <i class="fa-regular fa-images"></i>
+                    <span>Photos</span>
+                </a>
+
+                <button class="menu-item" data-filter="discussion">
+                    <i class="fa-regular fa-comments"></i>
+                    <span>Discussions</span>
+                </button>
+
+                <a class="menu-item" href="messages.html">
+                    <i class="fa-regular fa-envelope"></i>
+                    <span>Messages</span>
+                </a>
+
+                <a class="menu-item" href="#groups">
+                    <i class="fa-solid fa-people-group"></i>
+                    <span>Groups</span>
+                </a>
+
+                <a class="menu-item" href="#events">
+                    <i class="fa-regular fa-calendar"></i>
+                    <span>Events</span>
+                </a>
+
+                <a class="menu-item" href="Myprofile.html">
+                    <i class="fa-regular fa-user"></i>
+                    <span>My Profile</span>
+                </a>
+
+            </nav>
+
+            <div class="sidebar-bottom">
+
+                <div class="sidebar-help">
+                    <div class="help-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div>
+                        <strong>SOBA Community</strong>
+                        <small>Learn. Connect. Grow.</small>
+                    </div>
+                </div>
+
+                <button class="menu-item logout-side" id="sidebarLogout">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Log out</span>
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <section class="welcome-banner">
+
+                <div class="welcome-content">
+                    <span class="eyebrow">YOUR COMMUNITY SPACE</span>
+
+                    <h1>Discover <span>SOBA</span></h1>
+
+                    <p>
+                        Connect with people, share knowledge,
+                        discover opportunities and grow together.
+                    </p>
+
+                    <button class="explore-button" id="exploreButton">
+                        Explore community
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <div class="welcome-decoration">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+            </section>
+
+
+            <!-- STORIES -->
+            <section class="stories-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Community Stories</h2>
+                        <p>Discover moments from our community.</p>
+                    </div>
+
+                    <span class="section-link">Recent stories</span>
+                </div>
+
+                <div class="stories-list" id="storiesList">
+
+                    <button class="story-card create-story" id="createStoryBtn">
+                        <span class="story-add">
+                            <i class="fa-solid fa-plus"></i>
+                        </span>
+                        <strong>Create story</strong>
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- CREATE POST -->
+            <section class="create-post-card">
+
+                <div class="create-post-heading">
+                    <div>
+                        <h2>Share something</h2>
+                        <p>Your voice matters in this community.</p>
+                    </div>
+
+                    <i class="fa-regular fa-pen-to-square"></i>
+                </div>
+
+                <div class="create-post-top">
+
+                    <span class="large-avatar current-avatar" id="composerAvatar">S</span>
+
+                    <textarea
+                        id="postText"
+                        rows="3"
+                        placeholder="What would you like to share with SOBA?"
+                    ></textarea>
+
+                </div>
+
+                <div class="selected-file" id="selectedFile"></div>
+
+                <div class="create-post-bottom">
+
+                    <div class="post-tools">
+
+                        <label class="post-tool photo-tool">
+                            <i class="fa-regular fa-image"></i>
+                            <span>Photo</span>
+                            <input type="file" id="photoInput" accept="image/*" hidden>
+                        </label>
+
+                        <label class="post-tool video-tool">
+                            <i class="fa-solid fa-video"></i>
+                            <span>Video</span>
+                            <input type="file" id="videoInput" accept="video/*" hidden>
+                        </label>
+
+                        <label class="post-tool audio-tool">
+                            <i class="fa-solid fa-headphones"></i>
+                            <span>Audio</span>
+                            <input type="file" id="audioInput" accept="audio/*" hidden>
+                        </label>
+
+                    </div>
+
+                    <button class="publish-button" id="publishBtn">
+                        <i class="fa-solid fa-paper-plane"></i>
+                        Publish
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- COMMUNITY FEED -->
+            <div class="feed-filter-bar">
+
+                <div>
+                    <span class="eyebrow">STAY CONNECTED</span>
+                    <h2>Community Feed</h2>
+                </div>
+
+                <select id="feedSort">
+                    <option value="latest">Latest posts</option>
+                    <option value="popular">Popular posts</option>
+                </select>
+
+            </div>
+
+            <section class="posts-list" id="postsList"></section>
+
+
+            <!-- OTHER SECTIONS -->
+            <section class="coming-section" id="messages">
+                <i class="fa-regular fa-envelope"></i>
+                <div>
+                    <strong>Messages</strong>
+                    <p>Community messaging will be available soon.</p>
+                </div>
+            </section>
+
+            <section class="coming-section" id="groups">
+                <i class="fa-solid fa-people-group"></i>
+                <div>
+                    <strong>Groups</strong>
+                    <p>Connect with people who share your interests.</p>
+                </div>
+            </section>
+
+            <section class="coming-section" id="events">
+                <i class="fa-regular fa-calendar"></i>
+                <div>
+                    <strong>Events</strong>
+                    <p>Discover SOBA community activities.</p>
+                </div>
+            </section>
+
+            <section class="coming-section" id="myProfile">
+                <i class="fa-regular fa-user"></i>
+                <div>
+                    <strong>My Profile</strong>
+                    <p id="profileDetails">Your account information will appear here.</p>
+                </div>
+            </section>
+
+            <footer class="feed-footer">
+                © 2026 SOBA Community. Learn • Connect • Grow.
+            </footer>
+
+        </main>
+
+
+        <!-- RIGHT SIDEBAR -->
+        <aside class="right-sidebar">
+
+            <div class="right-card welcome-card">
+                <div class="right-card-heading">
+                    <h3>About SOBA</h3>
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <p>
+                    A community where young people learn,
+                    share experiences and build stronger communities.
+                </p>
+
+                <a href="index.html">
+                    Discover our mission
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+
+            <div class="right-card members-card">
+
+                <div class="right-card-heading">
+                    <h3>People to connect</h3>
+                    <span>Suggested</span>
+                </div>
+
+                <div class="member-item">
+                    <span class="member-avatar avatar-one">A</span>
+
+                    
+                      <div class="person-card">
+    <h4>Angel Uwase</h4>
+
+    <button
+        class="follow-btn"
+        data-user-email="angel@example.com"
+        data-user-name="Angel Uwase">
+        Follow
+    </button>
+
+                        <small>Creative community</small>
+                    </div>
+
+                    <button class="follow-btn">Follow</button>
+                </div>
+
+                <div class="member-item">
+                    <span class="member-avatar avatar-two">D</span>
+
+                    <div>
+                        <strong>David M.</strong>
+                        <small>Education community</small>
+                    </div>
+
+                    <button class="follow-btn">Follow</button>
+                </div>
+
+                <div class="member-item">
+                    <span class="member-avatar avatar-three">J</span>
+
+                    <div>
+                        <strong>Jean Patrick</strong>
+                        <small>Community volunteer</small>
+                    </div>
+
+                    <button class="follow-btn">Follow</button>
+                </div>
+
+            </div>
+
+
+            <div class="right-card trends-card">
+
+                <div class="right-card-heading">
+                    <h3>Trending topics</h3>
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                </div>
+
+                <div class="trend-item">
+                    <small>COMMUNITY</small>
+                    <strong>#YouthDevelopment</strong>
+                    <span>Community conversations</span>
+                </div>
+
+                <div class="trend-item">
+                    <small>EDUCATION</small>
+                    <strong>#LearningTogether</strong>
+                    <span>Knowledge sharing</span>
+                </div>
+
+                <div class="trend-item">
+                    <small>VOLUNTEERING</small>
+                    <strong>#CommunityAction</strong>
+                    <span>Positive community action</span>
+                </div>
+
+            </div>
+
+
+            <div class="right-card event-card">
+
+                <div class="right-card-heading">
+                    <h3>Community activity</h3>
+                    <i class="fa-regular fa-calendar"></i>
+                </div>
+
+                <div class="event-date">
+                    <strong>SOBA</strong>
+                    <span>COMMUNITY</span>
+                </div>
+
+                <h4>Community Learning Session</h4>
+
+                <p>
+                    Exchange knowledge, explore new ideas
+                    and learn together.
+                </p>
+
+                <a href="#events">Explore activities</a>
+
+            </div>
+
+            <div class="right-legal">
+                Privacy · Terms · About · Help
+                <br>
+                © 2026 SOBA Community
+            </div>
+
+        </aside>
+
+    </div>
+
+
+    <!-- STORY VIEWER -->
+    <div class="modal" id="storyModal">
+
+        <div class="story-viewer">
+
+            <button class="modal-close" id="closeStoryBtn" aria-label="Close story">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div id="storyViewerContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="soba-storage.js"></script>
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

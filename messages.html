@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBA | Messages</title>
+    <link rel="stylesheet" href="messages.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="messages-app">
+
+    <!-- SIDEBAR -->
+    <aside class="side-panel">
+        <a href="dashboard.html" class="brand">
+            <div class="brand-icon">S</div>
+            <div>
+                <strong>SOBA</strong>
+                <small>LIVE • LEARN • GROW</small>
+            </div>
+        </a>
+
+        <div class="side-label">YOUR SPACE</div>
+
+        <nav class="side-navigation">
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-compass"></i>
+                <span>Explore</span>
+            </a>
+            <a href="messages.html" class="active">
+                <i class="fa-regular fa-comments"></i>
+                <span>Messages</span>
+                <span class="nav-count">3</span>
+            </a>
+            <a href="dashboard.html">
+                <i class="fa-solid fa-users"></i>
+                <span>Community</span>
+            </a>
+            <a href="dashboard.html">
+                <i class="fa-regular fa-calendar"></i>
+                <span>Activities</span>
+            </a>
+        </nav>
+
+        <div class="side-label">YOUR WELLBEING</div>
+
+        <div class="wellbeing-card">
+            <div class="wellbeing-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3>Good conversations create growth.</h3>
+            <p>Connect, exchange ideas and learn something new every day.</p>
+        </div>
+
+        <div class="side-bottom">
+            <div class="profile-mini">
+                <div class="avatar avatar-me">S</div>
+                <div class="profile-details">
+                    <strong id="sidebarUser">SOBA Member</strong>
+                    <small>Community member</small>
+                </div>
+                <button id="logoutBtn" title="Logout">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- CONVERSATION LIST -->
+    <section class="inbox-panel">
+
+        <div class="inbox-heading">
+            <div>
+                <span class="eyebrow">YOUR CONNECTIONS</span>
+                <h1>Messages<span>.</span></h1>
+                <p>Ideas begin with conversations.</p>
+            </div>
+
+            <button class="icon-button" id="newMessageBtn" title="New conversation">
+                <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+        </div>
+
+        <div class="inbox-tabs">
+            <button class="tab-button active" data-filter="all">All</button>
+            <button class="tab-button" data-filter="unread">Unread</button>
+            <button class="tab-button" data-filter="groups">Groups</button>
+        </div>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="searchChats" placeholder="Find a conversation...">
+            <span>⌘ K</span>
+        </div>
+
+        <div class="inbox-list" id="inboxList"></div>
+
+        <div class="inbox-footer">
+            <i class="fa-solid fa-shield-heart"></i>
+            <span>Connect with kindness. Respect every voice.</span>
+        </div>
+    </section>
+
+    <!-- MAIN CONVERSATION -->
+    <main class="conversation-panel">
+
+        <header class="conversation-header" id="conversationHeader">
+            <div class="empty-header">
+                <span>SOBA CONVERSATION SPACE</span>
+            </div>
+        </header>
+
+        <div class="conversation-focus" id="conversationFocus">
+            <div class="focus-symbol">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div>
+                <small>CONVERSATION FOCUS</small>
+                <strong>Ideas, learning and positive growth</strong>
+            </div>
+            <span class="focus-status">COMMUNITY FIRST</span>
+        </div>
+
+        <section class="chat-content" id="chatContent">
+            <div class="welcome-state">
+                <div class="welcome-art">
+                    <div class="art-circle circle-one"></div>
+                    <div class="art-circle circle-two"></div>
+                    <i class="fa-regular fa-comments"></i>
+                </div>
+                <span class="eyebrow">WELCOME TO YOUR SPACE</span>
+                <h2>Every meaningful connection<br>starts with a conversation.</h2>
+                <p>Select a conversation on the left to begin.</p>
+                <div class="welcome-tags">
+                    <span>Share ideas</span>
+                    <span>Learn together</span>
+                    <span>Grow together</span>
+                </div>
+            </div>
+        </section>
+
+        <form class="message-composer" id="messageForm">
+            <button type="button" class="composer-tool" id="attachBtn" title="Attach file">
+                <i class="fa-solid fa-paperclip"></i>
+            </button>
+
+            <input type="file" id="fileInput" hidden>
+
+            <div class="composer-input-wrap">
+                <textarea id="messageInput" rows="1" placeholder="Write something meaningful..." disabled></textarea>
+                <small id="attachmentName"></small>
+            </div>
+
+            <button type="button" class="composer-tool" id="ideaBtn" title="Positive conversation idea">
+                <i class="fa-regular fa-lightbulb"></i>
+            </button>
+
+            <button type="submit" class="send-button" id="sendBtn" disabled>
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </form>
+
+        <div class="composer-note">
+            <i class="fa-solid fa-lock"></i>
+            Be respectful. Keep personal information private.
+        </div>
+    </main>
+
+    <!-- RIGHT INFORMATION PANEL -->
+    <aside class="insight-panel">
+        <div class="insight-heading">
+            <span class="eyebrow">SOBA EXPERIENCE</span>
+            <h2>Beyond<br>messaging.</h2>
+            <p>A space designed around meaningful human connection.</p>
+        </div>
+
+        <div class="experience-card">
+            <div class="experience-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3>Grow through ideas</h3>
+            <p>Share knowledge and encourage positive learning.</p>
+        </div>
+
+        <div class="experience-card">
+            <div class="experience-icon blue">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+            <h3>Build community</h3>
+            <p>Connect with people who share your interests.</p>
+        </div>
+
+        <div class="experience-card">
+            <div class="experience-icon orange">
+                <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+            <h3>Support each other</h3>
+            <p>Exchange useful information with respect.</p>
+        </div>
+
+        <div class="quote-card">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>"A good conversation can open the door to a new idea."</p>
+            <small>THE SOBA PRINCIPLE</small>
+        </div>
+
+        <div class="privacy-note">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <strong>Your space matters</strong>
+                <p>Demo messaging is stored in this browser only.</p>
+            </div>
+        </div>
+    </aside>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="messages.js"></script>
+</body>
+</html>

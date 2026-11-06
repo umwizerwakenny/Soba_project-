@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBA | My Profile</title>
+
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<header class="topbar">
+    <a href="dashboard.html" class="brand">
+        <span class="brand-icon"><i class="fa-solid fa-leaf"></i></span>
+        <span>SOBA</span>
+    </a>
+
+    <div class="top-search">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="search" placeholder="Search SOBA..." id="profileSearch">
+    </div>
+
+    <div class="top-actions">
+        <a href="dashboard.html" class="top-icon" title="Home">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <a href="messages.html" class="top-icon" title="Messages">
+            <i class="fa-regular fa-message"></i>
+        </a>
+
+        <div class="profile-dropdown">
+            <button class="user-menu-button" id="userMenuButton">
+                <span class="small-avatar" id="topAvatar">S</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </button>
+
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="profile.html">My Profile</a>
+                <a href="dashboard.html">Dashboard</a>
+                <button id="logoutButton">Log out</button>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="page-layout">
+
+    <aside class="sidebar">
+        <div class="sidebar-heading">MAIN MENU</div>
+
+        <a href="dashboard.html" class="side-link">
+            <i class="fa-solid fa-house"></i>
+            <span>Home Feed</span>
+        </a>
+
+        <a href="#" class="side-link">
+            <i class="fa-solid fa-compass"></i>
+            <span>Explore</span>
+        </a>
+
+        <a href="videos.html" class="side-link">
+            <i class="fa-solid fa-circle-play"></i>
+            <span>Videos</span>
+        </a>
+
+        <a href="#" class="side-link">
+            <i class="fa-solid fa-podcast"></i>
+            <span>Audio & Podcasts</span>
+        </a>
+
+        <a href="photos.html" class="side-link">
+            <i class="fa-regular fa-images"></i>
+            <span>Photos</span>
+        </a>
+
+        <a href="#" class="side-link">
+            <i class="fa-regular fa-comments"></i>
+            <span>Discussions</span>
+        </a>
+
+        <a href="messages.html" class="side-link">
+            <i class="fa-regular fa-message"></i>
+            <span>Messages</span>
+        </a>
+
+        <a href="#" class="side-link">
+            <i class="fa-solid fa-people-group"></i>
+            <span>Groups</span>
+        </a>
+
+        <a href="#" class="side-link">
+            <i class="fa-regular fa-calendar"></i>
+            <span>Events</span>
+        </a>
+
+        <div class="sidebar-divider"></div>
+
+        <div class="sidebar-heading">YOUR SPACE</div>
+
+        <a href="profile.html" class="side-link active">
+            <i class="fa-regular fa-user"></i>
+            <span>My Profile</span>
+        </a>
+
+        <a href="#" class="side-link">
+            <i class="fa-solid fa-gear"></i>
+            <span>Settings</span>
+        </a>
+
+        <div class="sidebar-note">
+            <div class="note-icon">
+                <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h4>Your story matters</h4>
+            <p>Share your journey, discover opportunities and grow with the SOBA community.</p>
+        </div>
+
+        <p class="sidebar-footer">© 2026 SOBA Community</p>
+    </aside>
+
+    <main class="main-content">
+
+        <div class="page-heading">
+            <div>
+                <span class="eyebrow">YOUR PERSONAL SPACE</span>
+                <h1>My Profile</h1>
+                <p>Manage your identity and share your journey with the community.</p>
+            </div>
+
+            <button class="edit-main-button" id="openEditButton">
+                <i class="fa-solid fa-pen"></i>
+                Edit Profile
+            </button>
+        </div>
+
+        <!-- COVER AND PROFILE -->
+        <section class="profile-card">
+
+            <div class="cover-photo" id="coverPhoto">
+                <div class="cover-overlay"></div>
+
+                <button class="change-cover-button" id="changeCoverButton">
+                    <i class="fa-solid fa-camera"></i>
+                    Change Cover
+                </button>
+
+                <input type="file" id="coverInput" accept="image/png,image/jpeg,image/webp" hidden>
+            </div>
+
+            <div class="profile-main">
+
+                <div class="profile-picture-area">
+                    <div class="profile-picture" id="profilePicture">
+                        <span id="profileInitial">S</span>
+                    </div>
+
+                    <button class="change-avatar-button" id="changeAvatarButton" title="Change profile photo">
+                        <i class="fa-solid fa-camera"></i>
+                    </button>
+
+                    <input type="file" id="avatarInput" accept="image/png,image/jpeg,image/webp" hidden>
+                </div>
+
+                <div class="profile-identity">
+                    <div class="name-line">
+                        <h2 id="displayName">SOBA Member</h2>
+                        <span class="member-badge">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Member
+                        </span>
+                    </div>
+
+                    <p class="profile-role" id="displayRole">SOBA Community Member</p>
+                    <p class="profile-bio" id="displayBio">
+                        Welcome to my SOBA profile. I am here to learn, share and grow.
+                    </p>
+
+                    <div class="profile-details">
+                        <span><i class="fa-regular fa-envelope"></i> <span id="displayEmail">email@example.com</span></span>
+                        <span><i class="fa-solid fa-location-dot"></i> <span id="displayLocation">Location not added</span></span>
+                        <span><i class="fa-regular fa-calendar"></i> <span id="joinDate">SOBA member</span></span>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <button class="edit-main-button" id="openEditButtonTwo">
+                        <i class="fa-solid fa-pen"></i> Edit Profile
+                    </button>
+                    <button class="share-profile-button" id="shareProfileButton">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </button>
+                </div>
+
+            </div>
+
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <strong id="postCount">0</strong>
+                    <span>Posts</span>
+                </div>
+                <div class="stat-item">
+                    <strong id="photoCount">0</strong>
+                    <span>Photos</span>
+                </div>
+                <div class="stat-item">
+                    <strong id="videoCount">0</strong>
+                    <span>Videos</span>
+                </div>
+                <div class="stat-item">
+                    <strong>0</strong>
+                    <span>Followers</span>
+                </div>
+                <div class="stat-item">
+                    <strong>0</strong>
+                    <span>Following</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFILE NAVIGATION -->
+        <nav class="profile-tabs">
+            <button class="profile-tab active" data-tab="posts">
+                <i class="fa-solid fa-table-cells"></i> Posts
+            </button>
+
+            <button class="profile-tab" data-tab="about">
+                <i class="fa-regular fa-user"></i> About
+            </button>
+
+            <button class="profile-tab" data-tab="photos">
+                <i class="fa-regular fa-images"></i> Photos
+            </button>
+
+            <button class="profile-tab" data-tab="videos">
+                <i class="fa-solid fa-circle-play"></i> Videos
+            </button>
+        </nav>
+
+        <!-- POSTS -->
+        <section class="tab-content active" id="postsTab">
+
+            <div class="content-heading">
+                <div>
+                    <h2>My Posts</h2>
+                    <p>Your contributions to the SOBA community.</p>
+                </div>
+            </div>
+
+            <div class="create-post-card">
+                <div class="create-avatar" id="createAvatar">S</div>
+
+                <button class="post-input-button" id="createPostButton">
+                    Share something with the community...
+                </button>
+            </div>
+
+            <div id="myPosts" class="my-posts">
+                <div class="empty-profile-state">
+                    <div class="empty-icon"><i class="fa-regular fa-newspaper"></i></div>
+                    <h3>Your story starts here</h3>
+                    <p>Posts you share on SOBA will appear on your profile.</p>
+                    <button class="primary-button" id="firstPostButton">
+                        <i class="fa-solid fa-plus"></i> Create your first post
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="tab-content" id="aboutTab">
+            <div class="about-card">
+                <h2>About Me</h2>
+                <p class="about-intro">Let the community know more about you.</p>
+
+                <div class="about-row">
+                    <div class="about-icon"><i class="fa-regular fa-user"></i></div>
+                    <div>
+                        <span>Full Name</span>
+                        <strong id="aboutName">Not added</strong>
+                    </div>
+                </div>
+
+                <div class="about-row">
+                    <div class="about-icon"><i class="fa-regular fa-envelope"></i></div>
+                    <div>
+                        <span>Email Address</span>
+                        <strong id="aboutEmail">Not added</strong>
+                    </div>
+                </div>
+
+                <div class="about-row">
+                    <div class="about-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <span>Location</span>
+                        <strong id="aboutLocation">Not added</strong>
+                    </div>
+                </div>
+
+                <div class="about-row">
+                    <div class="about-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <div>
+                        <span>Occupation / Profession</span>
+                        <strong id="aboutProfession">Not added</strong>
+                    </div>
+                </div>
+
+                <div class="about-row">
+                    <div class="about-icon"><i class="fa-solid fa-heart"></i></div>
+                    <div>
+                        <span>Interests</span>
+                        <strong id="aboutInterests">Not added</strong>
+                    </div>
+                </div>
+
+                <div class="about-row">
+                    <div class="about-icon"><i class="fa-regular fa-calendar"></i></div>
+                    <div>
+                        <span>Joined SOBA</span>
+                        <strong id="aboutJoined">SOBA member</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PHOTOS -->
+        <section class="tab-content" id="photosTab">
+            <div class="content-heading">
+                <div>
+                    <h2>My Photos</h2>
+                    <p>Photos you have shared with the community.</p>
+                </div>
+                <a href="photos.html" class="text-link">Open Photos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="media-grid" id="myPhotos">
+                <div class="empty-profile-state">
+                    <div class="empty-icon"><i class="fa-regular fa-images"></i></div>
+                    <h3>No photos to show</h3>
+                    <p>Your shared photos will appear here when available.</p>
+                    <a href="photos.html" class="primary-button">
+                        Explore Photos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEOS -->
+        <section class="tab-content" id="videosTab">
+            <div class="content-heading">
+                <div>
+                    <h2>My Videos</h2>
+                    <p>Videos you have shared with the community.</p>
+                </div>
+                <a href="videos.html" class="text-link">Open Videos <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="media-grid" id="myVideos">
+                <div class="empty-profile-state">
+                    <div class="empty-icon"><i class="fa-solid fa-circle-play"></i></div>
+                    <h3>No videos to show</h3>
+                    <p>Your uploaded videos will appear here when available.</p>
+                    <a href="videos.html" class="primary-button">
+                        Explore Videos
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<!-- EDIT PROFILE MODAL -->
+<div class="modal-overlay" id="editModal">
+    <div class="edit-modal">
+
+        <button class="close-modal" id="closeEditButton">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-heading">
+            <span class="modal-icon"><i class="fa-solid fa-user-pen"></i></span>
+            <h2>Edit your profile</h2>
+            <p>Update the information people see on your profile.</p>
+        </div>
+
+        <form id="editProfileForm">
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="editFirstName">First Name</label>
+                    <input type="text" id="editFirstName" required maxlength="50">
+                </div>
+
+                <div class="form-group">
+                    <label for="editLastName">Last Name</label>
+                    <input type="text" id="editLastName" required maxlength="50">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="editBio">About / Bio</label>
+                <textarea id="editBio" rows="3" maxlength="250" placeholder="Tell the community about yourself..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="editLocation">Location</label>
+                <input type="text" id="editLocation" maxlength="80" placeholder="e.g. Kigali, Rwanda">
+            </div>
+
+            <div class="form-group">
+                <label for="editProfession">Occupation / Profession</label>
+                <input type="text" id="editProfession" maxlength="80" placeholder="e.g. Student, Developer, Teacher">
+            </div>
+
+            <div class="form-group">
+                <label for="editInterests">Interests</label>
+                <input type="text" id="editInterests" maxlength="150" placeholder="e.g. Technology, Education, Sports">
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="editEmail" disabled>
+                <small>Your registered email cannot be changed here.</small>
+            </div>
+
+            <p class="edit-message" id="editMessage"></p>
+
+            <div class="modal-actions">
+                <button type="button" class="cancel-button" id="cancelEditButton">Cancel</button>
+                <button type="submit" class="primary-button">
+                    <i class="fa-solid fa-check"></i> Save Changes
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- CREATE POST MODAL -->
+<div class="modal-overlay" id="postModal">
+    <div class="edit-modal post-modal">
+
+        <button class="close-modal" id="closePostButton">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-heading">
+            <span class="modal-icon"><i class="fa-solid fa-pen-to-square"></i></span>
+            <h2>Create a post</h2>
+            <p>Share an idea, experience or positive message.</p>
+        </div>
+
+        <form id="createPostForm">
+            <div class="form-group">
+                <label for="postText">What's on your mind?</label>
+                <textarea id="postText" rows="5" maxlength="1500" placeholder="Write something meaningful..." required></textarea>
+            </div>
+
+            <p class="edit-message" id="postMessage"></p>
+
+            <div class="modal-actions">
+                <button type="button" class="cancel-button" id="cancelPostButton">Cancel</button>
+                <button type="submit" class="primary-button">
+                    <i class="fa-solid fa-paper-plane"></i> Publish Post
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="profile.js"></script>
+</body>
+</html>

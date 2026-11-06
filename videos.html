@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOBA | Videos</title>
+    <link rel="stylesheet" href="videos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <a href="dashboard.html" class="brand">
+            <span class="brand-icon"><i class="fa-solid fa-play"></i></span>
+            <span>SOBA</span>
+        </a>
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" id="videoSearch" placeholder="Search videos, topics or creators...">
+        </div>
+
+        <div class="top-actions">
+            <a href="dashboard.html" class="icon-button" title="Home">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <button class="icon-button" id="uploadTopButton" title="Upload video">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+            </button>
+            <div class="profile-area">
+                <button class="profile-button" id="profileButton">
+                    <span class="profile-avatar" id="userInitial">S</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="profile-menu" id="profileMenu">
+                    <p id="profileName">SOBA Member</p>
+                    <a href="dashboard.html">My dashboard</a>
+                    <button id="logoutButton">Log out</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-heading">MENU</div>
+
+            <a href="dashboard.html" class="side-link">
+                <i class="fa-solid fa-house"></i><span>Home Feed</span>
+            </a>
+            <a href="#" class="side-link">
+                <i class="fa-solid fa-compass"></i><span>Explore</span>
+            </a>
+            <a href="videos.html" class="side-link active">
+                <i class="fa-solid fa-circle-play"></i><span>Videos</span>
+            </a>
+            <a href="#" class="side-link">
+                <i class="fa-solid fa-podcast"></i><span>Audio & Podcasts</span>
+            </a>
+            <a href="photos.html" class="side-link">
+                <i class="fa-regular fa-images"></i><span>Photos</span>
+            </a>
+            <a href="#" class="side-link">
+                <i class="fa-regular fa-comments"></i><span>Discussions</span>
+            </a>
+            <a href="messages.html" class="side-link">
+                <i class="fa-regular fa-message"></i><span>Messages</span>
+            </a>
+            <a href="#" class="side-link">
+                <i class="fa-solid fa-people-group"></i><span>Groups</span>
+            </a>
+            <a href="#" class="side-link">
+                <i class="fa-regular fa-calendar"></i><span>Events</span>
+            </a>
+
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-heading">YOUR SPACE</div>
+
+            <a href="#" class="side-link">
+                <i class="fa-regular fa-user"></i><span>My Profile</span>
+            </a>
+            <a href="#" class="side-link">
+                <i class="fa-solid fa-gear"></i><span>Settings</span>
+            </a>
+
+            <div class="sidebar-note">
+                <div class="note-icon"><i class="fa-solid fa-lightbulb"></i></div>
+                <h4>Learn. Share. Grow.</h4>
+                <p>Every video can inspire someone to take a positive step.</p>
+            </div>
+
+            <p class="sidebar-footer">© 2026 SOBA Community</p>
+        </aside>
+
+        <main class="main-content">
+
+            <section class="video-hero">
+                <div class="hero-content">
+                    <span class="eyebrow"><i class="fa-solid fa-play"></i> SOBA WATCH</span>
+                    <h1>Ideas worth watching.<br><span>Knowledge worth sharing.</span></h1>
+                    <p>Discover educational videos, practical skills, community stories and inspiring conversations.</p>
+                    <button class="primary-button" id="heroUploadButton">
+                        <i class="fa-solid fa-plus"></i> Share a video
+                    </button>
+                </div>
+                <div class="hero-art">
+                    <div class="hero-play"><i class="fa-solid fa-play"></i></div>
+                    <div class="hero-orbit orbit-one"></div>
+                    <div class="hero-orbit orbit-two"></div>
+                    <span class="floating-tag tag-one">LEARN</span>
+                    <span class="floating-tag tag-two">CREATE</span>
+                    <span class="floating-tag tag-three">INSPIRE</span>
+                </div>
+            </section>
+
+            <section class="category-section">
+                <div class="section-heading">
+                    <div>
+                        <h2>Explore videos</h2>
+                        <p>Find content that matches your interests.</p>
+                    </div>
+                    <select id="sortVideos" class="sort-select">
+                        <option value="recent">Most recent</option>
+                        <option value="popular">Most popular</option>
+                    </select>
+                </div>
+
+                <div class="category-list" id="categoryList">
+                    <button class="category-chip active" data-category="All">All videos</button>
+                    <button class="category-chip" data-category="Education">Education</button>
+                    <button class="category-chip" data-category="Technology">Technology</button>
+                    <button class="category-chip" data-category="Life Skills">Life Skills</button>
+                    <button class="category-chip" data-category="Community">Community</button>
+                    <button class="category-chip" data-category="Motivation">Motivation</button>
+                    <button class="category-chip" data-category="Career">Career</button>
+                </div>
+            </section>
+
+            <section class="video-section">
+                <div class="section-heading feed-heading">
+                    <div>
+                        <h2>Community videos</h2>
+                        <p>Watch, learn and take part in the conversation.</p>
+                    </div>
+                    <span class="video-count" id="videoCount">0 videos</span>
+                </div>
+
+                <div class="video-grid" id="videoGrid"></div>
+
+                <div class="empty-state hidden" id="emptyState">
+                    <i class="fa-solid fa-video-slash"></i>
+                    <h3>No videos found</h3>
+                    <p>Try another search or category.</p>
+                </div>
+            </section>
+
+            <footer class="main-footer">
+                <p>SOBA — A community for learning, sharing and positive growth.</p>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Upload modal -->
+    <div class="modal-overlay" id="uploadModal">
+        <div class="modal-card">
+            <button class="close-modal" id="closeUploadModal" aria-label="Close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-heading">
+                <span class="modal-icon"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                <h2>Share a video</h2>
+                <p>Share something useful, educational or inspiring with the SOBA community.</p>
+            </div>
+
+            <form id="uploadForm">
+                <label for="videoTitle">Video title</label>
+                <input type="text" id="videoTitle" maxlength="90" placeholder="Give your video a title" required>
+
+                <label for="videoDescription">Description</label>
+                <textarea id="videoDescription" maxlength="400" rows="3" placeholder="What is this video about?"></textarea>
+
+                <label for="videoCategory">Category</label>
+                <select id="videoCategory" required>
+                    <option value="">Choose a category</option>
+                    <option>Education</option>
+                    <option>Technology</option>
+                    <option>Life Skills</option>
+                    <option>Community</option>
+                    <option>Motivation</option>
+                    <option>Career</option>
+                </select>
+
+                <label class="file-drop" for="videoFile">
+                    <i class="fa-solid fa-film"></i>
+                    <strong id="fileLabel">Choose a video from your device</strong>
+                    <span>MP4, WEBM or OGG · Maximum 50 MB</span>
+                    <input type="file" id="videoFile" accept="video/mp4,video/webm,video/ogg" hidden required>
+                </label>
+
+                <div class="upload-preview hidden" id="uploadPreview">
+                    <video id="previewVideo" controls></video>
+                    <button type="button" id="removeVideo" class="remove-file">
+                        <i class="fa-solid fa-trash"></i> Remove video
+                    </button>
+                </div>
+
+                <label class="consent-line">
+                    <input type="checkbox" id="videoConsent" required>
+                    <span>I confirm that I have permission to share this video and that it respects other people's privacy.</span>
+                </label>
+
+                <button type="submit" class="primary-button submit-button">
+                    <i class="fa-solid fa-paper-plane"></i> Publish video
+                </button>
+                <p class="form-message" id="formMessage"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video player modal -->
+    <div class="player-overlay hidden" id="playerModal">
+        <div class="player-container">
+            <button class="close-player" id="closePlayer" aria-label="Close video">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="player-video-wrap">
+                <video id="mainVideoPlayer" controls playsinline></video>
+            </div>
+            <div class="player-details">
+                <h2 id="playerTitle"></h2>
+                <p id="playerDescription"></p>
+                <div class="player-author" id="playerAuthor"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="videos.js"></script>
+</body>
+</html>
